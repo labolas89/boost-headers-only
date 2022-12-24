@@ -2335,6 +2335,14 @@ public:
         m_size = 0;
     }
 
+    /*! add by ujlee
+        It can be used to reduce copying by incrementing the last iterator at a small cost and writing data directly to the buffer with reference access using back()
+    */
+	void incr_last() {
+		increment(m_last);
+		if (!full()) ++m_size;
+	}
+
 private:
 // Helper methods
 
