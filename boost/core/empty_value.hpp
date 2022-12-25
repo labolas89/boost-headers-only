@@ -139,7 +139,11 @@ public:
 
 using empty_::empty_value;
 
+#if 1 // fix by ujlee at 20221225(ti compiler error)
+BOOST_CONSTEXPR_OR_CONST empty_init_t empty_init = empty_init_t();
+#else
 BOOST_INLINE_CONSTEXPR empty_init_t empty_init = empty_init_t();
+#endif
 
 } /* boost */
 

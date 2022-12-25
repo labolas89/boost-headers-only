@@ -2336,6 +2336,13 @@ public:
     }
 
     /*! add by ujlee
+        When incr_last() is called, a reference to be back() is returned.
+    */
+    reference next_back() {
+		return *(m_last);
+	}
+
+    /*! add by ujlee
         It can be used to reduce copying by incrementing the last iterator at a small cost and writing data directly to the buffer with reference access using back()
     */
 	void incr_last() {
